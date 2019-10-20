@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>LevelUp</title>
+</head>
+<body>
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome, Human!<h1>
+        <p class="lead"></p>
+        <hr class="my-4">
+        <p class="text-monospace lead">This is a site where we help you acheive your goals and stuff. It's like an RPG, but instead
+            of fighting monsters, you're fighting DEMONS!  You're demons! Maybe you're fighting laziness, lack of motivation, or not
+            maybe you're not fighting anything and you just want to learn new, fun and cool things.  I'm bad at writing copy.  Join the website and set some goals,
+             then break those goals down into smaller pieces, we'll assign some point values to those things, and keep track of your progress.  You'll gain levels
+              even if you don't reach your goals, because effort should be rewarded regardless of outcome.  Do stuff, gain levels, show off to your friends, 
+              encourage them on their journeys and congratulate their progress.  Did I explain things well enough? I'll probably delete this again later. I suck at copy. 
+              Maybe I should work on that....
+        </p>
+
+   
+        
+    </div>
+    <div class="container-fluid">
+        <div class='row'>
+    
+            <div class="col">
+                <div class="jumbotron jumbotron-fluid text-center">
+                    <hi class="display-4">Register</hi>
+                </div>
+            </div>
+            <div class="col">
+                <div class="jumbotron-fluid jumbotron text-center">
+                    <hi class="display-4">Login</hi>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+    
+            <div class="col">
+                <div class="container">
+                    <form action="C:\Users\johna\Projects\personal_projects\level_up\LevelUpWireframe\index.html" class="text-monospace"method='POST'>
+                        <!-- {% csrf_token %} -->
+                        <div class="form-group row">
+                            <label for="first_name">First Name</label>
+                            <input name="first_name" type="text" class="form-control" id="first_name">
+    
+                        </div>
+                        <div class="form-group row">
+                            <label for="last_name">Last Name</label>
+                            <input name="last_name" type="text" class="form-control" id="last_name">
+                        </div>
+                        <div class="form-group row">
+                            <label for="email">Email</label>
+                            <input name="email" type="text" class="form-control" id="email_register">
+                            <span id="emailWarning" class="form-text text-muted"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password">Password</label>
+                            <input name="password" type="password" class="form-control" id="register_password"
+                                placeholder="Password">
+                        </div>
+                        <div class="form-group row">
+                            <label for="confirm_password">Password</label>
+                            <input name="confirm_password" type="password" class="form-control" id="confirm_password"
+                                placeholder="Confirm Password">
+                        </div>
+                        <div class="form-group row">
+                            <label for="birthday">Birthday</label>
+                            <input class="form-control" type="date" id="birthday" name="birthday" value="2018-07-22">
+                        </div>
+    
+                        <div class="form-group row">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+    
+                    </form>
+                </div>
+            </div>
+            <div class="col">
+                <div class='container'>
+                    <form class="text-monospace" action="C:\Users\johna\Projects\personal_projects\level_up\LevelUpWireframe\index.html" method="POST">
+                        <!-- {% csrf_token %} -->
+                        <div class="form-group row">
+                            <label for="email">Email address</label>
+                            <input name="email" type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter email">
+    
+                        </div>
+                        <div class="form-group row">
+                            <label for="password">Password</label>
+                            <input name="password" type="text" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <div class="form-group row">
+                            <button type="submit" class="btn btn-primary">Log In</button>
+                        </div>
+    
+    
+                    </form>
+                </div>
+    
+            </div>
+        </div>
+    
+</body>
+</html>

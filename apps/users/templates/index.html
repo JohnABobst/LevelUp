@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+    <title>Login/Register</title>
+    {% load static %}
+</head>
+<body>
+    <div class="display-4 text-center mb-3">Welcome! Sign in to manage your jobs!</div>
+        
+            {% for message in messages %}
+           <h6 class="text-center">{{message}}</h6>
+                
+           
+            {% endfor %}
+        
+    <div class="container">
+        <div class='row'>
+            
+            <div class="col">
+                <div class="jumbotron jumbotron-fluid text-center">
+                    <hi class="display-4">Register</hi>
+                </div>
+            </div>
+            <div class="col">
+                <div class="jumbotron-fluid jumbotron text-center">
+                    <hi class="display-4">Login</hi>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col">
+                <div class="container">
+                    <form action="/register" method='POST'>
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="first_name">First Name</label>
+                            <input name="first_name" type="text" class="form-control" id="first_name">
+
+                        </div>
+                        <div class="form-group row">
+                            <label for="last_name">Last Name</label>
+                            <input name="last_name" type="text" class="form-control" id="last_name">
+                        </div>
+                        <div class="form-group row">
+                            <label for="email">Email</label>
+                            <input name="email" type="text" class="form-control" id="email_register">
+                            <span id="emailWarning"  class="form-text text-muted"></span>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password">Password</label>
+                            <input name="password" type="password" class="form-control" id="register_password" placeholder="Password">
+                        </div>
+                        <div class="form-group row">
+                            <label for="confirm_password">Password</label>
+                            <input name="confirm_password" type="password" class="form-control" id="confirm_password"
+                                placeholder="Confirm Password">
+                        </div>
+                        <div class="form-group row">
+                            <label for="birthday">Birthday</label>
+                            <input class="form-control" type="date" id="birthday" name="birthday" value="2018-07-22">
+                        </div>
+
+                        <div class="form-group row">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="col">
+               <div class='container'>
+                <form action="/login" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group row">
+                        <label for="email">Email address</label>
+                        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter email">
+                
+                    </div>
+                    <div class="form-group row">
+                        <label for="password">Password</label>
+                        <input name="password" type="text" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-group row">
+                        <button type="submit" class="btn btn-primary">Log In</button>
+                    </div>
+                
+                
+                </form>
+               </div>
+               
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="{% static 'js/users/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{% include 'goal/headers.html' %}
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Hello, Human!</h1>
+            <p class="lead">Here is where you can create, edit, and delete your groups.</p>            
+        </div>
+        <div class="row">
+            <div class="container">
+                <form action="">
+                    <p class="lead mono-space text-center">Create a group</p>
+                    <div class="form-group">
+                        <label for="group_name">Group Name</label>
+                        <input name="group_name" type="text" class="form-control" id="group_name" placeholder="Group Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="group_description">Group Description</label>
+                        <textarea name="group_description" class="form-control" id="group_description" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container">
+                <div class="card-columns">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Running</h5>
+                            <p class="card-text">For people who like running</p>
+                            <a class="btn btn-primary"href="">Group Detail</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Trilingual</h5>
+                            <p class="card-text">For people who speak 3 languages.</p>
+                            <a class="btn btn-primary" href="">Group Detail</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Rockin Out</h5>
+                            <p class="card-text">For people who love rockin out!</p>
+                            <a class="btn btn-primary" href="">Group Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+{% include 'goal/footers.html' %}
+    
+    
+
