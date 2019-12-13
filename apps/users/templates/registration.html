@@ -25,6 +25,9 @@
    
         
     </div>
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
     <div class="container-fluid">
         <div class='row'>
     
@@ -43,8 +46,13 @@
     
             <div class="col">
                 <div class="container">
-                    <form action="C:\Users\johna\Projects\personal_projects\level_up\LevelUpWireframe\index.html" class="text-monospace"method='POST'>
-                        <!-- {% csrf_token %} -->
+                    <form action="register" class="text-monospace"method='POST'>
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label for="user_name">User name</label>
+                            <input name="user_name" type="text" class="form-control" id="user_nameInput">
+    
+                        </div>
                         <div class="form-group row">
                             <label for="first_name">First Name</label>
                             <input name="first_name" type="text" class="form-control" id="first_name">
@@ -83,11 +91,11 @@
             </div>
             <div class="col">
                 <div class='container'>
-                    <form class="text-monospace" action="C:\Users\johna\Projects\personal_projects\level_up\LevelUpWireframe\index.html" method="POST">
-                        <!-- {% csrf_token %} -->
+                    <form class="text-monospace" action="login" method="POST">
+                        {% csrf_token %}
                         <div class="form-group row">
                             <label for="email">Email address</label>
-                            <input name="email" type="email" class="form-control" id="exampleInputEmail1"
+                            <input name="email" type="email" class="form-control" id="emailInput"
                                 aria-describedby="emailHelp" placeholder="Enter email">
     
                         </div>

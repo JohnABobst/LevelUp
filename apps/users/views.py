@@ -16,8 +16,11 @@ def login(request):
     print(user)
     if user:
         logged_user = user[0]
-        print(bcrypt.checkpw(password.encode(), logged_user.password.encode()))
-        if bcrypt.checkpw(password.encode(), logged_user.password.encode()):
+        # print(bcrypt.check_pw(password.encode('utf-8'), logged_user.password.encode('utf-8')))
+        hashed = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
+        print(logged_user.password == hashed)
+        if bcrypt.checkpw(  hashed,logged_user.password):
+            request.user = logged_user
             request.session['userid'] = logged_user.id
             request.session['email'] = logged_user.email
             request.session['user'] = logged_user.first_name
@@ -43,14 +46,17 @@ def register(request):
         birthday = form['birthday']
         hashed = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
         email = form['email']
+        user_name= form['user_name']
         user = User.objects.create(
             first_name = first_name,
             last_name=last_name,
             password=hashed,
             email=email,
-            birthday=birthday
+            birthday=birthday,
+            user_name=user_name
         )
-        user.save()        
+        user.save()
+        request.user = user     
         request.session['userid'] = user.id
         request.session['email'] = user.email
         request.session['user'] = user.first_name      

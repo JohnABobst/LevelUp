@@ -1,5 +1,5 @@
 from django.db import models
-
+from apps.users.models import *
 # Create your models here.
 class Following(models.Model):
     follower = models.ForeignKey(User, on_delete=models.CASCADE, related_name='following')
